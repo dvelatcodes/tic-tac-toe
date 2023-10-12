@@ -3,4 +3,12 @@
 console.log("connected")
 const gameBoard = document.querySelector(".gameboard");
 const comments = document.querySelector(".comments");
+const boxes = ["", "", "", "", "", "", "", "", ""];
 
+(function createBox() {
+    boxes.forEach((_box, index) => {
+        const square = document.createElement("div");
+        square.classList.add("square");
+        gameBoard.append(square)
+    })
+})()
