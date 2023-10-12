@@ -51,20 +51,20 @@ function checkWinner() {
     winningVal.forEach(matchingCells => {
         const circleChecker = matchingCells.every(cell => allSquares[cell].firstChild?.classList.contains("circle"))
         if (circleChecker) {
-            console.log("true")
             comment.textContent = "circle wins";
             allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
-            setTimeout(() => alert(comment.textContent), 1000)
+            setTimeout(() => alert(comment.textContent), 1000);
+            return
         }
     });
 
     winningVal.forEach(matchingCells => {
         const crossChecker = matchingCells.every(cell => allSquares[cell].firstChild?.classList.contains("cross"))
         if (crossChecker) {
-            console.log("true")
             comment.textContent = "cross wins"
             allSquares.forEach(square => square.replaceWith(square.cloneNode(true)))
             setTimeout(()=>alert(comment.textContent),1000)
+            return
         }
     })
 }
